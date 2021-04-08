@@ -1,0 +1,23 @@
+package mc.sn.day4;
+
+public class MainClass {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		ExampleClass ec = new ExampleClass();
+////		ec.test1(2021);
+//		
+////		MyCalandar mc = new MyCalandar();
+////		mc.displayCalandar(2021);
+//		
+//		int[] m = ec.testArray();
+//		for(int i:m) {
+//			System.out.println(i);
+//		}
+//		System.out.println(m.length);
+		Week w;
+		Week 林富 = Week.配;
+		System.out.println(林富);
+		
+		
+	}
+}

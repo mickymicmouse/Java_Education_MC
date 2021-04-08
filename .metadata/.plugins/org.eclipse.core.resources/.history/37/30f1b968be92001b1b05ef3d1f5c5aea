@@ -1,0 +1,29 @@
+package mc.sn.practice;
+
+public class LottoBall {
+
+		boolean[] isSelect = new boolean[45];
+		private String ballNumber;
+		private boolean isSelectedBall;
+		
+		LottoBall(String ballNumber, boolean isSelectedBall){
+			this.ballNumber = ballNumber;
+			this.isSelectedBall = isSelectedBall;
+		}
+		
+		public void SetBall(String n) {
+			String[] x = n.split(" ");
+			for (int i=1;i<=n.length(); i++) {
+				System.out.println(x[i-1]);
+			}
+			this.ballNumber = n;
+			this.isSelectedBall = true;
+		}
+		public String getBall() {
+			return this.ballNumber;
+		}
+		public static void main(String[] args) {
+			LottoBall lb = new LottoBall("1 2 3 4 1",true);
+			lb.SetBall("3 4 5 2 4");
+		}
+}

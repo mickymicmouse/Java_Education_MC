@@ -1,0 +1,15 @@
+package mc.sn.practice;
+
+public abstract class Shape {
+	
+	private String info;
+	public Shape(){
+		
+	}
+	
+	
+	
+	
+	public abstract void draw();
+	
+}

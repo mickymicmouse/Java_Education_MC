@@ -1,0 +1,11 @@
+package mc.sn.day4;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ExampleClass ec = new ExampleClass();
+		ec.test1(2008);
+	}
+
+}

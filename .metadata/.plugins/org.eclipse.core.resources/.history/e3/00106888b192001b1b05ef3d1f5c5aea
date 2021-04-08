@@ -1,0 +1,20 @@
+package mc.sn.day4;
+
+public class DataClass {
+	
+		public String name;
+		public String sex;
+	
+		public DataClass(String n, String s){
+			name = n;
+			sex = s;
+		}
+		
+		public void who() {
+			System.out.println(name+", "+sex);
+		}
+		public static void main(String[] args) {
+		DataClass dc = new DataClass("Lee","m");
+		dc.who();
+		}
+}

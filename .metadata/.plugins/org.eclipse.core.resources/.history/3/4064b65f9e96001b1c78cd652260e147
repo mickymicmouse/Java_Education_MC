@@ -1,0 +1,15 @@
+package mc.sn.day7;
+
+public class TestException {
+
+	public static void main(String[] args) {
+		TestException te = new TestException();
+		te.test1();
+	}
+	public void test1() {
+		System.out.println("test1");
+		int a = 0;
+		int c = 10/a;
+		System.out.println(c);
+	}
+}

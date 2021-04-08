@@ -1,0 +1,17 @@
+package mc.sn.day7;
+
+public class ThreadTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ThreadTest tt = new ThreadTest();
+		tt.test1();
+	}
+	public void test1() {
+		MyThread mt = new MyThread();
+		System.out.println("before start()");
+		mt.start();
+		System.out.println("after start()");
+	}
+
+}

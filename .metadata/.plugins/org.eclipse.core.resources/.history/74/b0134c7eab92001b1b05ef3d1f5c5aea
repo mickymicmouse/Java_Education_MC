@@ -1,0 +1,14 @@
+package mc.sn.day4;
+
+public class StringTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		test1();
+	}
+	public static void test1() {
+		String name = "Lee";
+		String addr = "서울시 노원구";
+		System.out.println(name + ","+ addr);
+	}
+}

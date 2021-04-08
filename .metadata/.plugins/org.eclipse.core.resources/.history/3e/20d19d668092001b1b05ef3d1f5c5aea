@@ -1,0 +1,10 @@
+package mc.sn.practice;
+
+public class ServiceClass {
+	
+	
+	public void displayMonth() {
+		
+	}
+	
+}
