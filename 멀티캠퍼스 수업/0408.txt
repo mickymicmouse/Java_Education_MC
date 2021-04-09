@@ -1,0 +1,6 @@
+마크 다운
+
+마크업(mark up) : 마킹하다, 표시하다
+선언형 언어(마크업 언어)
+대표적 언어
+HTML - Hypertext Markup Language
