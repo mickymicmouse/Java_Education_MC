@@ -1,0 +1,14 @@
+create table gisaTBL(
+	stdNo number primary key not null,
+	email varchar2(50) not null,
+	kor number not null,
+	eng number not null,
+	math number not null,
+	sci number not null,
+	hist number not null,
+	total number not null,
+	mgrCode varchar2(50) not null,
+	accPoint varchar2(50) not null,
+	localCode varchar2(50) not null
+);
+

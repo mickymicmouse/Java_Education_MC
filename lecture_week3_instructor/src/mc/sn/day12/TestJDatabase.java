@@ -1,7 +1,8 @@
 package mc.sn.day12;
 
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class TestJDatabase {
 
@@ -10,27 +11,33 @@ public class TestJDatabase {
 		TestJDatabase td = new TestJDatabase();
 		try {
 			td.connectDB();
-		} catch (ClassNotFoundException c) {
-			c.getMessage();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.getMessage();
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
-	private void connectDB() throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
+	
+	public void connectDB() throws SQLException, ClassNotFoundException {
 		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 		String driver = "oracle.jdbc.OracleDriver";
 		String id = "hr";
 		String pwd = "1234";
-		Class.class.forName(driver);
-		Connection con = DriverManager.getConnection(jdbcURL, id, pwd);
-		if (con!=null) {
+		Class.forName(driver);
+		Connection con = DriverManager.getConnection(jdbcURL,id,pwd);
+		if(con!=null) {
 			System.out.println("connected");
 			con.close();
-			
 		} else {
-			System.out.println("failed");
+			System.out.println("fail");
 		}
+		
 	}
+
 }
+
+
+
+

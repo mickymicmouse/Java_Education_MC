@@ -1,0 +1,15 @@
+CREATE TABLE testTBL2(
+id NUMBER(4) PRIMARY KEY,
+userName NCHAR(3) NOT NULL,
+age NUMBER(2),
+nation NCHAR(4) DEFAULT '대한민국'
+);
+
+SELECT * FROM testTBL2;
+
+INSERT INTO testTBL2(id, userName, age, nation) VALUES (1, 'kim','20','한국');
+
+SELECT * FROM testTBL2;
+
+DROP TABLE testTBL2;
+
