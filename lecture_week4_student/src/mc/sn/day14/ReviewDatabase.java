@@ -2,6 +2,7 @@ package mc.sn.day14;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -11,71 +12,77 @@ public class ReviewDatabase {
 		// TODO Auto-generated method stub
 		ReviewDatabase rd = new ReviewDatabase();
 		try {
-			rd.testConnectDB();
 			rd.testQuery();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
-		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-
 	
-	public Connection testConnectDB() throws SQLException, ClassNotFoundException {
-		// TODO Auto-generated method stub
-		
-		// 접속 요소
-		String jdbcuri = "jdbc:oracle:thin:@localhost:1521:xe";
+	public Connection testConnectDB() throws ClassNotFoundException, SQLException {
+		//접속코드 작성하세요
 		String driver = "oracle.jdbc.OracleDriver";
+		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
 		String id = "hr";
 		String pwd = "1234";
-		// 드라이버 로딩 (접속 프로토콜 정의해둔 것)
+		//드라이버 로딩
 		Class.forName(driver);
-		// 커넥션 만들기
-		Connection con = DriverManager.getConnection(jdbcuri, id, pwd);
+		//컨넥션 만들어야 한다.(연결)
+		Connection con = DriverManager.getConnection(jdbcURL,id,pwd);
 		
-		if (con!=null) {
-			System.out.println("success");
-//			con.close();
-		}else {
-			System.out.println("fail");
-		}
-		
+		//연결종료
+		//con.close();
 		return con;
+	}
+	public void testQuery2() {
+		String sql = "insert into gisaTBL values (?,?,?,?,?,?,?,?,?,?,?)";
+		//DML 코드 작성하세요(Insert,Update,Delete)
+		//컨넥션을 testConnectDB로 받아오고 싶다.
+		Connection con = null;
+		PreparedStatement stmt = null;
+		try {
+			con = this.testConnectDB();
+			//쿼리를 보내는 통로를 만들어야 한다.
+			stmt = con.prepareStatement(sql);//new 를 사용하지 않는 이유?
+			stmt.setInt(1, 0);
+			int affectedCount = stmt.executeUpdate();
+			if(affectedCount>0) {
+				
+			} else {
+				
+			}
+		} catch(ClassNotFoundException ce) {
+			
+		} catch(SQLException se) {
+			
+		} finally {
+			try {
+				stmt.close();
+				con.close();
+			} catch(SQLException se) {
+				
+			}
+		}
 	}
 	
 	public void testQuery() throws ClassNotFoundException, SQLException {
-		// TODO Auto-generated method stub
+		//DML 코드 작성하세요(Insert,Update,Delete)
+		//컨넥션을 testConnectDB로 받아오고 싶다.
 		Connection con = this.testConnectDB();
-		String sql = "INSERT INTO testTBL2(id,username,age) "
-				+ "VALUES (7,'lee','addr')";
-		// id가 2번인 userName을 lee로 변경하는 쿼리를 작성하시오.
-		sql = "UPDATE testTBL2 SET userName='lee' WHERE id = 2";
-		// userName 이 kim인 자료를 모두 삭제하는 쿼리를 작성하시오.
-		sql = "DELETE FROM testTBL2 where userName = 'kim'";
-		sql = "CREATE TABLE testTBL3 "
-				+ "(id NUMBER PRIMARY KEY, username VARCHAR2, age NUMBER) ";
-		// 쿼리를 보내는 통로 생성
-		// connection 으로 부터 DB정보를 얻어오기 때문에 new가 사용되지 않음.
-		System.out.println(sql);
-		Statement stmt = con.createStatement();
+		//쿼리를 보내는 통로를 만들어야 한다.
+		Statement stmt = con.createStatement();//new 를 사용하지 않는 이유?
+		String sql = "insert into gisaTBL values (/*11개의 값을 설정*/)";
 		int affectedCount = stmt.executeUpdate(sql);
 		if(affectedCount>0) {
-			System.out.println("입력완료");
+			
 		} else {
-			System.out.println("입력실패");
+			
 		}
 		stmt.close();
 		con.close();
 	}
-
-
-	
-	
-	
-	
 
 }
