@@ -12,10 +12,44 @@
 
 
 
-2021-04-12 ~ 
+2021-04-12 ~
 
 1. Oracle 설치
 2. SQL 쿼리
 3. JAVA, Oracle 연동
 4. Jdbc 활용
+5. Java Oracle 커넥션
 
+```java
+	public Connection getConnection() throws ClassNotFoundException, SQLException {
+		Connection con = null;
+		String jdbcURL = "jdbc:oracle:thin:@localhost:1521:xe";
+		String driver = "oracle.jdbc.OracleDriver";
+		String id = "hr";
+		String pwd = "1234";
+		
+		Class.forName(driver);
+		con = DriverManager.getConnection(jdbcURL,id,pwd);
+		
+		return con;
+	}
+```
+
+6. Java query 명령어
+
+```java
+public void query1() throws ClassNotFoundException, SQLException {
+    Connection con = this.getConnection();
+    String sql = "INSERT INTO testTBL2(id,username,age) "
+    Statement stmt = con.createStatement();
+    PreparedStatement pstmt = con.prepareStatement(sql);
+    int affectedCount = pstmt.executeUpdate();
+    ResultSet rs = pstmt.executeQuery();
+	}
+```
+
+
+
+2021-04-21 ~
+
+1. HTML
