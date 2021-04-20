@@ -29,12 +29,17 @@ public class TestBasicDB {
 		//13시 30분까지 
 		//컨넥션 취득
 		Connection con = this.getConnection();
+		// 쿼리 요청 및 통로 생성
 		Statement stmt = con.createStatement();
+		// 쿼리 작성
 		String sql = "select * from gisaTBL";
+		// 쿼리 요청 및 결과 취득
 		ResultSet rs = stmt.executeQuery(sql);
-		while(rs.next()) {
+		while(rs.next()) /* 데이터 레코드로 이동(테이블의 마지막까지) */{
+			//해당 속성 조회
 			int stdNo = rs.getInt("stdNo"); //인덱스의 시작은 1부터
 			String email = rs.getString("email");
+			// 조회 결과 출력
 			System.out.println(stdNo+","+email);
 		}
 		rs.close();
