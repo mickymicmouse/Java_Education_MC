@@ -52,4 +52,5 @@ public void query1() throws ClassNotFoundException, SQLException {
 
 2021-04-21 ~
 
-1. HTML
+1. eclipse editor 설정
+2. HTML 태그
