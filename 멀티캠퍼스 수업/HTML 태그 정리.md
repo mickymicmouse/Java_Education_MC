@@ -181,9 +181,9 @@
     ```
 
     	<form>
-            <input type = "text" name = "search">
-            <input type = "submit">
-        </form>
+    	    <input type = "text" name = "search">
+    	    <input type = "submit">
+    	</form>
     ```html
     <form action = "전송 위치" method = "전송 방식">
         
@@ -380,6 +380,39 @@
             <input type="submit" />
         </fieldset>
     </form>
+* 공간 분할 태그
+  * div
+    * 블록 형식으로 공간 분할
+  * span
+    * 인라인 형식으로 공간 분할
+* 태그 분할
+  * 인라인-블록 형식 태그
+    * 이미지
+
+| 블록 형식 태그 | 인라인 형식 태그 |
+| -------------- | ---------------- |
+| div            | span             |
+| h1~h6          | a                |
+| p              | input            |
+| 목록           | 글자             |
+| 테이블         | 입력 양식        |
+
+
+
+* 시멘틱 태크
+  * header
+    * 머릿말
+  * nav
+    * 내비게이션
+  * aside
+    * 본문 흐름에 벗어나는 노트나 팁
+  * section
+    * 문서의 장이나 절
+  * article
+    * 본문과 독립적인 콘텐츠 영역
+  * footer
+    * 꼬리말
+
 
 
 
@@ -392,3 +425,5 @@
     * \>
   * \&amp;
     * &
+  * \<!--주석-->
+    * 주석
