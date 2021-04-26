@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>시간 정보</title>
+	<script>
+		var date_info;
+		function start(){
+			var clock = document.getElementById("clock");
+			date_info = setInterval(function(){
+				var now = new Date();
+				clock.innerHTML = now.toLocaleString();
+			}, 1000);
+			alert("start");
+		}
+		
+		
+		//alert('stop')을 실행하는 stop 함수를 만드세요
+		function stop(){
+			alert('stop');
+			clearInterval(date_info);
+		}
+	</script>
+</head>
+<body>
+	<h1 id = "clock"></h1>
+	<button onclick="start()">시작</button>
+	<button onclick="stop()">멈춤</button>
+	<!--  이벤트 소스와 핸들러를 연결하는 속성 작성 -->>
+</body>
+</html>
