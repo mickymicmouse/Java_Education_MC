@@ -53,4 +53,6 @@ public void query1() throws ClassNotFoundException, SQLException {
 2021-04-21 ~
 
 1. eclipse editor 설정
-2. HTML 태그
+2. HTML 태그, 속성
+3. CSS 태그, 속성
+4. 웹 레이아웃
