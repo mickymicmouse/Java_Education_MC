@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form Test</title>
+	<script>
+		function checkId(){
+			var id = document.getElementById("userId");
+			alert('checkID '+id.value);
+		}
+		
+		function checkPwd1(version){
+			var pwd = document.getElementById(version);
+			alert('pwd '+pwd.value);
+		}
+		
+		function valCheck(){
+			var pwd1 = document.getElementById("pwd1");
+			var pwd2 = document.getElementById("pwd2");
+			if (pwd1 == pwd2){
+				alert("같음");
+			}else{
+				alert("다름");
+			}
+		}
+		function radioCheck(){
+			var radio = document.getElementsByName("gender");
+			for(var i = 0; i<radio.length; i++){
+				if (radio[i].checked==true){
+					alert(radio[i].value)
+				}
+			} 
+		}
+		
+		function checkCheck(){
+			var check = document.getElementsByName("lang");
+			var str = "";
+			for(var i = 0; i<check.length; i++){
+				if (check[i].checked==true){
+					str = str + " " + check[i].value;
+				}
+			}
+			if (str == ""){
+				alert('NO check option');
+			}else{
+				alert('check option is ' + str);
+			}
+		}
+		
+		function selectCheck(){
+			var select = document.getElementById("ha");
+			if (select.value == "0"){
+				alert("No selected hobby")
+			}else{
+				alert("selected hobby is "+select.value);
+			}
+		}
+		
+		function checkData(){
+			var langs = document.getElementsByName("lang");
+			var count=0;
+			for (var i = 0; i<langs.length; i++){
+				if (langs[i].checked==true){
+					count++;
+				}
+			}
+			if (count>=2){
+				alert('2개 이상 선택');
+				return true;
+			}else{
+				alert('2개 이상 선택해야 함');
+				return false;
+			}
+			
+		}
+	</script>
+</head>
+<body>
+	<form action = "" method = "get">
+		<table>
+		<tr>
+			<td>User ID : </td>
+			<td><input type = "text" id = "userId" name = ""></td>
+			<td><button onclick = "checkId()">확인</button></td>
+		</tr>
+		<tr>
+			<td>Password1 : </td>
+			<td><input type = "password" id = "pwd1" name = "" value = "1234"></td>
+			<td><button onclick = "checkPwd1('pwd1')">확인</button></td>
+		</tr>
+		<tr>
+			<td>Password2 : </td>
+			<td><input type = "password" id = "pwd2" name = "" value = "2345" onblur = "valCheck()"></td>
+			<td><button onclick = "checkPwd1('pwd2')">확인</button></td>
+			<td><button onclick = "valCheck()" disabled = "disabled">중복확인</button></td>
+		</tr>
+		<tr>
+			<td>성별 :</td> 	
+			<td>
+				<input type = "radio" id = "gender1" name = "gender" value = "남">남
+				<input type = "radio" id = "gender2" name = "gender" value = "여" checked = "checked">여
+			</td>
+			<td><button onclick = "radioCheck()">확인</button></td>
+		</tr>
+		<tr>
+			<td>사용언어 :</td>
+			<td>
+			<input type = "checkbox" id = "" name = "lang" value = "자바">자바
+			<input type = "checkbox" id = "" name = "lang" value = "SQL">SQL
+			<input type = "checkbox" id = "" name = "lang" value = "자바스크립트">자바스크립트
+			<input type = "checkbox" id = "" name = "lang" value = "파이썬" checked = "checked">파이썬
+			</td>
+			<td><button onclick = "checkCheck()">확인</button></td>
+		</tr>
+		<tr>
+			<td>취미 :</td>	
+			<td>
+				<select id = ha>
+					<option value = "0">--선택--
+					<option value = "1" selected="selected">코딩
+					<option value = "2">분석
+					<option value = "3">테스트
+					<option value = "4">설계
+				</select>
+			</td>
+			<td><button onclick = "selectCheck()">확인</button></td>
+		</tr>
+		<tr>
+			<td> </td>
+			<td><input type = "submit" value = "전송" onclick="return checkData()"></td>
+		
+		</tr>
+		
+		</table>
+	</form>
+</body>
+</html>
