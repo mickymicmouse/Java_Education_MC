@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="mc.sn.test">
+	<logger name="mc.sn.testspring">
 		<level value="info" />
 	</logger>
 	
