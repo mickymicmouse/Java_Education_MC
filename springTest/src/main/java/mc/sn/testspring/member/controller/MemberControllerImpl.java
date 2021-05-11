@@ -46,6 +46,7 @@ public class MemberControllerImpl implements MemberController {
 		                       HttpServletRequest request, HttpServletResponse response) throws Exception {
 	ModelAndView mav = new ModelAndView();
 	String viewName = this.getViewName(request);
+	logger.info(member.toString());
 	memberVO = memberService.login(member);
 	//System.out.println(memberVO.getName());	
 	if(memberVO != null) {

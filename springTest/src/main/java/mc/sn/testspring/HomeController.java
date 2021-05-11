@@ -36,4 +36,19 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/json", method = RequestMethod.GET)
+	public String process(Locale locale, Model model) {
+		logger.info("Welcome home! The client locale is {}.", locale);
+		
+		
+		return "JSONTest";
+	}
+	
+	@RequestMapping(value = "/form", method = RequestMethod.GET)
+	public String login(Locale locale, Model model) {
+		logger.info("Welcome LoginForm! The client locale is {}.", locale);
+		
+		
+		return "loginForm";
+	}
 }
