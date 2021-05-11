@@ -11,12 +11,16 @@
 Result
 <%
 	MemberVO vo = (MemberVO)session.getAttribute("member");
+	String result = "로그인 정보가 정확하지 않습니다.";
+	out.print(vo);
 	if (vo!=null){
-		out.print(vo.getName()+"님 반갑습니다.");
-	} else {
-		out.print("로그인 정보가 정확하지 않습니다.");
+		result = vo.getName()+"님 정말 반갑습니다. Status Success!!!";
 	}
+	String alertMessage = "<script>alert('"+result+"')</script>";
+	out.print(alertMessage);
+	session.invalidate();
+%>		
 
-%>
+
 </body>
 </html>

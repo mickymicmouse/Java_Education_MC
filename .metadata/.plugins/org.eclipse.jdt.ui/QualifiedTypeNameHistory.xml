@@ -28,4 +28,5 @@
     <fullyQualifiedTypeName name="mc.sn.dao.LoginDAO"/>
     <fullyQualifiedTypeName name="mc.sn.vo.LoginVO"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="mc.sn.springTest.MemberVO"/>
 </qualifiedTypeNameHistroy>

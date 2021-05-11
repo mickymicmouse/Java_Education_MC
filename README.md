@@ -56,3 +56,55 @@ public void query1() throws ClassNotFoundException, SQLException {
 2. HTML 태그, 속성
 3. CSS 태그, 속성
 4. 웹 레이아웃
+
+
+
+1. spring 으로 웹페이지 개발
+
+
+
+### 구조
+
+* jsp - js 
+
+  * header 부분에 script 태그로 연결
+
+* jsp - css
+
+  * header 부분에 link 태그로 연결
+
+* controller - jsp
+
+  * context로 연결 
+
+  * ```java
+    @RequestMapping(value = { "/login/loginForm.do", "/member/memberForm.do" }, method =  RequestMethod.GET)
+    ```
+
+* controller - service
+
+  * 객체로 연결
+
+  * ```java
+    memberVO = memberService.login(member);
+    ```
+
+* service - dao
+
+  * 객체로 연결
+
+  * ```java
+    vo = memberDAO.loginById(memberVO);
+    ```
+
+* dao - database
+
+  * sqlsession으로 연결
+
+  * ```java
+    vo = sqlSession.selectOne("mapper.member.loginById",memberVO);
+    ```
+
+* vo
+
+  * Value Object 데이터를 저장하는 클래스

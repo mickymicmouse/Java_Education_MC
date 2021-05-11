@@ -5,14 +5,25 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
+<link rel = "stylesheet" href = "/testspring/resources/css/mystyle.css">
+<script type = "text/javascript" src = "/testspring/resources/js/command.js"></script>
 </head>
 <body>
-<form action="/testspring/login/result.do" method="post">
+<form action="/testspring/login/result.do" method="post" onsubmit = "return checkData()">
 <table>
-	<tr><td><input type="text" name="id" ></td></tr>
-	<tr><td><input type="password" name="pwd" value="1234"></td></tr>
-	<tr><td><input type="submit" value="로그인"></td></tr>
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="id" id = "userId"></td></tr>
+	<tr>
+		<td>패스워드</td>
+		<td><input type="password" name="pwd" value="1234" id = password></td></tr>
+	<tr>
+		<td>로그인</td>
+		<td><input type="submit" value="로그인"></td>
+	</tr>
 </table>
+	<img src = "/testspring/resources/image/duke.png" alt= "이미지 연결 연습">
+
 </form>
 </body>
 </html>

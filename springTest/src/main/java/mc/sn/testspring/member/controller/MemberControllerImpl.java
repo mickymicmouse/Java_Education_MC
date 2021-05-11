@@ -52,6 +52,8 @@ public class MemberControllerImpl implements MemberController {
 	    HttpSession session = request.getSession();
 	    session.setAttribute("member", memberVO);
 	    //session.setAttribute("isLogOn", true);
+		
+		//request.setAttribute("member", memberVO);
 	    
 	    //mav.setViewName("redirect:/member/listMembers.do");
 	}else {
