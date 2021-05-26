@@ -7,12 +7,15 @@
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\dev\workspace\review_spring"/>
+			<item value="C:\dev\workspace"/>
 			<item value="C:\dev\006895-master\pro27"/>
 			<item value="C:\dev\006895-master\pro19"/>
 			<item value="C:\dev\006895-master\pro18"/>
 			<item value=""/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\seoun\Downloads\spring-review.zip"/>
 			<item value="C:\Users\seoun\Downloads\springTest.zip"/>
 			<item value=""/>
 			<item value="C:\dev\workspace\db_과제2_이승준.zip"/>
