@@ -15,6 +15,7 @@
 			<item value="C:\dev\006895-master\pro18"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value="C:\Users\seoun\Downloads\spring-ai_complete.zip"/>
 			<item value="C:\Users\seoun\Downloads\spring-ai.ziip.zip"/>
 			<item value="C:\Users\seoun\Downloads\spring-crud-v31.zip"/>
 			<item value="C:\Users\seoun\Downloads\spring-review.zip"/>
@@ -36,10 +37,9 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="com.springsource.sts.wizard.template"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.springframework.ide.eclipse.beans.ui.wizards.category"/>
 			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>

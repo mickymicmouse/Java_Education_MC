@@ -39,9 +39,71 @@ public class AIControllerImpl   implements AIController {
 	}
 
 	@Override
-	@RequestMapping("/clovaSTT")
+	//@RequestMapping("/clovaSTT")
+	@RequestMapping(value="/clovaSTT", produces = "application/text; charset=UTF-8")
 	@ResponseBody
 	public String stt(@RequestParam("uploadFile") MultipartFile file,
+								@RequestParam("language") String language) {
+		String result = "";
+		
+		try {
+			//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치 (프로젝트 외부에 저장)
+			  String uploadPath =  "c:/ai/";
+			  
+			  //2.원본 파일 이름
+			  String originalFileName = file.getOriginalFilename();  
+			  
+			  //3. 파일 생성 
+			  String filePathName = uploadPath + originalFileName;
+			  File file1 = new File(filePathName);
+			  System.out.println(filePathName);
+			  //4. 서버로 전송
+			  file.transferTo(file1);
+			  
+			  result = aiService.clovaSpeechToText(filePathName, language);
+			  System.out.println("ai "+result);
+			  
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	@Override
+	@RequestMapping("/clovaOCR")
+	@ResponseBody
+	public String clovaOCR(@RequestParam("uploadFile") MultipartFile file) {
+		String result = "";
+		
+		try {
+			//1. 파일 저장 경로 설정 : 실제 서비스 되는 위치 (프로젝트 외부에 저장)
+			  String uploadPath =  "c:/ai/";
+			  
+			  //2.원본 파일 이름
+			  String originalFileName = file.getOriginalFilename();  
+			  
+			  //3. 파일 생성 
+			  String filePathName = uploadPath + originalFileName;
+			  File file1 = new File(filePathName);
+			  
+			  //4. 서버로 전송
+			  file.transferTo(file1);
+			  
+			  result = aiService.clovaOCRService(filePathName);
+			  System.out.println(result);
+			  
+		}catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	@RequestMapping("/clovaTTS")
+	@ResponseBody
+	public String TTS(@RequestParam("uploadFile") MultipartFile file,
 								@RequestParam("language") String language) {
 		String result = "";
 		
@@ -59,14 +121,15 @@ public class AIControllerImpl   implements AIController {
 			  //4. 서버로 전송
 			  file.transferTo(file1);
 			  
-			  result = aiService.clovaSpeechToText(filePathName, language);
-			  System.out.println("ai "+result);
+			  result = aiService.clovaTextToSpeech(filePathName, language);
+			  System.out.println(result);
 			  
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return result;
+		
+		return result;  //음성 일 이름 반환
 	}
 	
 }

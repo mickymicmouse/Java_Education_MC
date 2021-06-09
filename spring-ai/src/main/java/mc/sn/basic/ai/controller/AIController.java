@@ -15,4 +15,5 @@ public interface AIController {
 	public String nmt(@RequestParam("words") String words, HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public String stt(@RequestParam("uploadFile") MultipartFile file,
 			@RequestParam("language") String language);
+	public String clovaOCR(@RequestParam("uploadFile") MultipartFile file);
 }

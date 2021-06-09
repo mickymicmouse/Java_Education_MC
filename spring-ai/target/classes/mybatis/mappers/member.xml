@@ -133,10 +133,11 @@
 	      </choose>
        </where>
        order by joinDate desc
-   </select> -->
-   
+   </select> 
+  -->
+ <!--  
    <select id="foreachSelect" resultMap="memResult" parameterType="java.util.Map">
-      <!-- <include refid="a" /> -->
+      <include refid="a" />
       <![CDATA[
         select * from t_member 
           
@@ -158,8 +159,9 @@
                     #{item.email})
       </foreach>
    </insert>
-   
+ -->  
    <!--  like 검색 -->
+   <!--
    <select id="selectLike" resultMap="memResult"  parameterType="String" >
       <![CDATA[
          select * from t_member
@@ -167,4 +169,5 @@
          name like '%' || #{name} || '%'		
       ]]>
     </select>
+     --> 
 </mapper>

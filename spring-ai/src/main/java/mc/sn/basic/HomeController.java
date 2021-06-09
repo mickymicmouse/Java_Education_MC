@@ -61,6 +61,40 @@ public class HomeController {
 		return "voiceRecord";
 	}
 	
+	@RequestMapping(value = "/sttResult", method = RequestMethod.GET)
+	public String stt(Locale locale, Model model) {
+		
+		
+		return "sttResult";
+	}
+	
+	@RequestMapping(value = "/ocr", method = RequestMethod.GET)
+	public String ocr(Locale locale, Model model) {
+		
+		
+		return "ocrResult";
+	}
+	
+	@RequestMapping(value = "/tts", method = RequestMethod.GET)
+	public String tts(Locale locale, Model model) {
+		
+		
+		return "ttsResult";
+	}
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String chat(Locale locale, Model model) {
+		
+		
+		return "chatForm";
+	}
+	
+	@RequestMapping(value = "/chat2", method = RequestMethod.GET)
+	public String chat2(Locale locale, Model model) {
+		
+		
+		return "chatForm2";
+	}
 
 //	@RequestMapping(value="/nmt1" ,method = RequestMethod.GET)
 //	@ResponseBody
